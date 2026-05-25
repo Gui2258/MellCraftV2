@@ -1,0 +1,134 @@
+.pageHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: 32px;
+  margin: 0;
+}
+
+.newBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  background: var(--va-terracotta);
+  color: var(--va-cream);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background var(--transition);
+}
+
+.newBtn:hover {
+  background: var(--va-clay);
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.section {
+  background: var(--va-paper);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--va-line);
+  overflow: hidden;
+}
+
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--va-line);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 18px;
+  margin: 0;
+}
+
+.seeAll {
+  font-size: 13px;
+  color: var(--va-terracotta);
+  text-decoration: none;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table th {
+  text-align: left;
+  padding: 12px 20px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: rgba(42, 31, 24, 0.5);
+  border-bottom: 1px solid var(--va-line);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--va-line);
+  vertical-align: middle;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.idCell {
+  font-family: monospace;
+  font-size: 12px;
+  color: rgba(42, 31, 24, 0.55);
+}
+
+.dateCell {
+  color: rgba(42, 31, 24, 0.55);
+  font-size: 13px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.emptyRow {
+  text-align: center;
+  color: rgba(42, 31, 24, 0.4);
+  padding: 40px !important;
+}
+
+@media (max-width: 1100px) {
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .kpiGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,120 @@
+/* Mell Craft — Shared base styles for both variants */
+
+/* ----- Variant A: Romántica Artesanal ----- */
+.va {
+  --va-cream: #FBF6EE;
+  --va-paper: #F4EBDA;
+  --va-terracotta: #C8553D;
+  --va-terracotta-dark: #A8412C;
+  --va-coffee: #3D2C1F;
+  --va-ink: #2A1F18;
+  --va-mustard: #D9A55C;
+  --va-sage: #8FA67B;
+  --va-blush: #E8B9A8;
+  --va-line: rgba(61, 44, 31, 0.12);
+  --va-line-strong: rgba(61, 44, 31, 0.22);
+  --va-shadow: 0 2px 6px rgba(61, 44, 31, 0.05), 0 12px 30px rgba(61, 44, 31, 0.07);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--va-ink);
+  background: var(--va-cream);
+}
+.va h1, .va h2, .va h3, .va h4, .va .serif {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.va .script {
+  font-family: 'Caveat', 'Marker Felt', cursive;
+  font-weight: 500;
+}
+
+/* ----- Variant B: Boutique Moderna ----- */
+.vb {
+  --vb-bone: #F2EDE4;
+  --vb-paper: #FAF7F1;
+  --vb-clay: #B7472A;
+  --vb-clay-dark: #8E3621;
+  --vb-espresso: #1F1814;
+  --vb-ink: #2A211B;
+  --vb-putty: #D6C9B8;
+  --vb-stone: #8A7E6F;
+  --vb-amber: #C28A3D;
+  --vb-line: rgba(31, 24, 20, 0.10);
+  --vb-line-strong: rgba(31, 24, 20, 0.22);
+  --vb-shadow: 0 1px 2px rgba(31, 24, 20, 0.04), 0 8px 24px rgba(31, 24, 20, 0.06);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--vb-ink);
+  background: var(--vb-paper);
+}
+.vb h1, .vb h2, .vb h3, .vb h4, .vb .serif {
+  font-family: 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+.vb .mono {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ----- Shared utility ----- */
+.screen {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 1.4;
+  position: relative;
+}
+.screen.scroll {
+  overflow-y: auto;
+}
+.screen *, .screen *::before, .screen *::after {
+  box-sizing: border-box;
+}
+
+/* No focus outline inside artboards (mockups, not real form fields) */
+.screen input, .screen button, .screen textarea, .screen select {
+  outline: none;
+  font-family: inherit;
+}
+
+/* Image placeholders */
+.img-ph {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #d8c6ad;
+}
+
+/* nice scrollbar removal inside artboards */
+.screen::-webkit-scrollbar,
+.screen *::-webkit-scrollbar { display: none; }
+.screen, .screen * { scrollbar-width: none; }
+
+/* Soft dotted divider (Variant A) */
+.va .dotted {
+  background-image: radial-gradient(circle, var(--va-line-strong) 1px, transparent 1px);
+  background-size: 8px 8px;
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+  height: 8px;
+}
+
+/* Tag pills */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Icon SVG default */
+.screen svg.icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex: 0 0 auto;
+}

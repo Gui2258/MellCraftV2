@@ -1,0 +1,42 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.badge {
+  border-radius: 50%;
+  background: var(--va-terracotta);
+  color: var(--va-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.text {
+  line-height: 1;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.name em {
+  font-style: italic;
+}
+
+.tagline {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--va-terracotta);
+  margin-top: 3px;
+  font-family: var(--font-body);
+}

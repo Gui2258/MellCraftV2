@@ -1,0 +1,38 @@
+/* Mell Craft — Variante A "Romántica Artesanal" */
+:root {
+  /* Colors */
+  --va-terracotta: #C8553D;
+  --va-cream: #FBF6EE;
+  --va-coffee: #3D2C1F;
+  --va-mustard: #EBC683;
+  --va-sage: #8FA67B;
+  --va-rose: #D88A7A;
+  --va-paper: #E8DDC8;
+  --va-clay: #D88A6E;
+  --va-blush: #F2D5C9;
+  --va-putty: #E5DACB;
+  --va-ink: #2A1F15;
+
+  /* Borders */
+  --va-line: rgba(61, 44, 31, 0.12);
+  --va-line-strong: rgba(61, 44, 31, 0.25);
+
+  /* Shadows */
+  --va-shadow-sm: 0 2px 8px rgba(61, 44, 31, 0.08);
+  --va-shadow: 0 8px 24px rgba(61, 44, 31, 0.1);
+  --va-shadow-lg: 0 16px 48px rgba(61, 44, 31, 0.14);
+
+  /* Fonts */
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-accent: var(--font-caveat), cursive;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition: 200ms ease;
+}

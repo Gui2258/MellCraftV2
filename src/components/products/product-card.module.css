@@ -1,0 +1,147 @@
+.card {
+  background: var(--va-paper);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  display: block;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--va-shadow);
+}
+
+.imageWrap {
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+
+.newBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--va-coffee);
+  color: var(--va-cream);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  z-index: 1;
+}
+
+.unavailableBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(61, 44, 31, 0.6);
+  color: var(--va-cream);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.likeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(251, 246, 238, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+  transition: transform var(--transition);
+}
+
+.likeBtn:hover {
+  transform: scale(1.1);
+}
+
+.likeBtn.liked {
+  background: rgba(200, 85, 61, 0.1);
+}
+
+.info {
+  padding: 16px 18px 20px;
+}
+
+.type {
+  font-size: 11px;
+  color: var(--va-terracotta);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: var(--va-ink);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(42, 31, 24, 0.6);
+  margin-bottom: 12px;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.priceCup {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--va-coffee);
+}
+
+.priceUsd {
+  font-size: 12px;
+  opacity: 0.65;
+  font-weight: 400;
+}
+
+.addBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--va-coffee);
+  color: var(--va-cream);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+  flex-shrink: 0;
+}
+
+.addBtn:hover {
+  background: var(--va-terracotta);
+}
