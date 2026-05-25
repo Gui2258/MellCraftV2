@@ -153,8 +153,8 @@
   }
 
   .main {
-    padding: 14px 20px;
-    gap: 16px;
+    padding: 14px 16px;
+    gap: 10px;
   }
 
   .nav {
@@ -162,12 +162,22 @@
   }
 
   .searchBar {
-    width: 40px;
+    width: 38px;
+    min-width: 38px;
     padding: 8px;
     justify-content: center;
   }
 
   .searchPlaceholder {
     display: none;
+  }
+
+  .dashboardLink {
+    display: none;
+  }
+
+  .actions {
+    gap: 6px;
+    flex-shrink: 0;
   }
 }

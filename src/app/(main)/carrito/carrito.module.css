@@ -350,11 +350,11 @@
   }
 
   .row {
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 80px 1fr auto;
     grid-template-areas:
-      'img info'
-      'img qty'
-      'total total';
+      'img info remove'
+      'img qty qty'
+      'total total total';
     gap: 12px;
   }
 
@@ -378,7 +378,8 @@
   }
 
   .removeBtn {
-    display: none;
+    grid-area: remove;
+    align-self: start;
   }
 
   .summary {

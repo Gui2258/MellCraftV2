@@ -2,3 +2,5 @@
 {"config":{"logLevel":"info","nodeVersion":"v22.17.0","platform":"linux","serverName":"react-native-mcp-server"},"level":"info","logLevel":"info","message":"MCP Server starting","nodeVersion":"v22.17.0","platform":"linux","timestamp":"2026-05-26 20:30:49","version":"1.1.0"}
 {"level":"info","message":"MCP Server shutting down","reason":"SIGINT","timestamp":"2026-05-26 22:41:02"}
 {"config":{"logLevel":"info","nodeVersion":"v22.17.0","platform":"linux","serverName":"react-native-mcp-server"},"level":"info","logLevel":"info","message":"MCP Server starting","nodeVersion":"v22.17.0","platform":"linux","timestamp":"2026-05-27 10:15:03","version":"1.1.0"}
+{"level":"info","message":"MCP Server shutting down","reason":"SIGINT","timestamp":"2026-05-27 18:56:13"}
+{"config":{"logLevel":"info","nodeVersion":"v22.17.0","platform":"linux","serverName":"react-native-mcp-server"},"level":"info","logLevel":"info","message":"MCP Server starting","nodeVersion":"v22.17.0","platform":"linux","timestamp":"2026-05-27 20:26:09","version":"1.1.0"}

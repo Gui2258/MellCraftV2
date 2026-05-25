@@ -53,13 +53,23 @@ export default function PedidosPage() {
 
   async function updateStatus(orderId: string, status: OrderStatus) {
     setUpdating(orderId)
-    await fetch(`/api/orders/${orderId}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ status }),
-    })
-    setOrders((prev) => prev.map((o) => (o.id === orderId ? { ...o, status } : o)))
-    setUpdating(null)
+    try {
+      const res = await fetch(`/api/orders/${orderId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status }),
+      })
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}))
+        alert(`Error al actualizar: ${err.error ?? res.statusText}`)
+      } else {
+        setOrders((prev) => prev.map((o) => (o.id === orderId ? { ...o, status } : o)))
+      }
+    } catch {
+      alert('Error de red al actualizar el estado')
+    } finally {
+      setUpdating(null)
+    }
   }
 
   return (

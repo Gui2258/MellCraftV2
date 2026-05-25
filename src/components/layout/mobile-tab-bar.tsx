@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { HomeIcon, SearchIcon, HeartIcon, UserIcon } from '@/components/ui/icons'
+import { HomeIcon, SearchIcon, HeartIcon, BagIcon, UserIcon } from '@/components/ui/icons'
 import { useCart } from '@/components/cart/cart-context'
 import styles from './mobile-tab-bar.module.css'
 
@@ -10,6 +10,7 @@ const TABS = [
   { id: 'home', href: '/', label: 'Inicio', Icon: HomeIcon },
   { id: 'catalog', href: '/catalogo', label: 'Tienda', Icon: SearchIcon },
   { id: 'favs', href: '/favoritos', label: 'Favoritos', Icon: HeartIcon },
+  { id: 'cart', href: '/carrito', label: 'Carrito', Icon: BagIcon },
   { id: 'profile', href: '/perfil', label: 'Yo', Icon: UserIcon },
 ]
 
