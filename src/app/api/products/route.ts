@@ -154,6 +154,16 @@ export async function POST(req: Request) {
     return Response.json({ error: parsed.error.flatten() }, { status: 400 })
   }
 
-  const [product] = await db.insert(products).values(parsed.data).returning()
-  return Response.json({ data: product }, { status: 201 })
+  try {
+    const [product] = await db.insert(products).values(parsed.data).returning()
+    return Response.json({ data: product }, { status: 201 })
+  } catch (err) {
+    // Surface the real cause in Vercel logs (and in the response while stabilizing
+    // the deploy) instead of an opaque empty 500.
+    console.error('[POST /api/products] insert failed:', err)
+    return Response.json(
+      { error: 'Database error', detail: err instanceof Error ? err.message : String(err) },
+      { status: 500 },
+    )
+  }
 }
