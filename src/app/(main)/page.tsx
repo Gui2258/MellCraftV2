@@ -64,10 +64,10 @@ async function getFeaturedProducts(): Promise<ProductRow[]> {
 }
 
 const CATEGORIES = [
-  { name: 'San Valentín', slug: 'san-valentin', tone: 'terracotta' as const, count: 12 },
-  { name: 'Día de las Madres', slug: 'dia-madres', tone: 'mustard' as const, count: 8 },
-  { name: 'Peluches & Chuches', slug: 'peluches', tone: 'sage' as const, count: 19 },
-  { name: 'Cartulina & Papel', slug: 'cartulina-papel', tone: 'rose' as const, count: 24 },
+  { name: 'San Valentín', slug: 'san-valentin', tone: 'terracotta' as const, count: 12, image: '/rosa-eterna.jpg' },
+  { name: 'Día de las Madres', slug: 'dia-madres', tone: 'mustard' as const, count: 8, image: '/regalos.jpg' },
+  { name: 'Peluches & Chuches', slug: 'peluches', tone: 'sage' as const, count: 19, image: '/ramo-chuches.jpg' },
+  { name: 'Cartulina & Papel', slug: 'cartulina-papel', tone: 'rose' as const, count: 24, image: '/regalos.jpg' },
 ]
 
 export default async function HomePage() {
@@ -122,13 +122,13 @@ export default async function HomePage() {
           {/* Collage */}
           <div className={styles.heroCollage}>
             <div className={styles.collageMain}>
-              <ProductImage tone="terracotta" label="Ramo de Chuches" style={{ width: '100%', height: '100%' }} />
+              <ProductImage tone="terracotta" src="/ramo-chuches.jpg" alt="Ramo de chuches" label="Ramo de Chuches" style={{ width: '100%', height: '100%' }} />
             </div>
             <div className={styles.collageSecond}>
-              <ProductImage tone="rose" label="Bouquet Eterno" style={{ width: '100%', height: '100%' }} />
+              <ProductImage tone="rose" src="/rosa-eterna.jpg" alt="Bouquet eterno" label="Bouquet Eterno" style={{ width: '100%', height: '100%' }} />
             </div>
             <div className={styles.collageThird}>
-              <ProductImage tone="mustard" label="Tarjeta Mamá" style={{ width: '100%', height: '100%' }} />
+              <ProductImage tone="mustard" src="/regalos.jpg" alt="Tarjeta y regalo para mamá" label="Tarjeta Mamá" style={{ width: '100%', height: '100%' }} />
             </div>
             <div className={styles.collageTag}>¡Pieza única!</div>
           </div>
@@ -144,7 +144,7 @@ export default async function HomePage() {
         <div className={styles.categoryGrid}>
           {CATEGORIES.map((cat) => (
             <Link key={cat.slug} href={`/catalogo?tipo=${cat.slug}`} className={styles.categoryCard}>
-              <ProductImage tone={cat.tone} style={{ width: '100%', height: '100%' }}>
+              <ProductImage tone={cat.tone} src={cat.image} alt={cat.name} style={{ width: '100%', height: '100%' }}>
                 <div className={styles.categoryOverlay}>
                   <div className={styles.categoryName}>{cat.name}</div>
                   <div className={styles.categoryCount}>{cat.count} piezas</div>
@@ -202,7 +202,7 @@ export default async function HomePage() {
       {/* Story */}
       <section className={styles.story}>
         <div className={styles.storyImage}>
-          <ProductImage tone="coffee" style={{ width: '100%', height: '100%' }} />
+          <ProductImage tone="coffee" src="/rosa-eterna.jpg" alt="Detalle hecho a mano en el taller" style={{ width: '100%', height: '100%' }} />
         </div>
         <div className={styles.storyText}>
           <span className={styles.script}>Pequeño taller</span>
@@ -231,9 +231,16 @@ export default async function HomePage() {
         <span className={styles.script}>Nos siguen en</span>
         <h2 className={styles.igHandle}>@mellcraft.cu</h2>
         <div className={styles.igGrid}>
-          {(['terracotta', 'rose', 'mustard', 'sage', 'blush', 'paper'] as const).map((t) => (
-            <div key={t} className={styles.igCell}>
-              <ProductImage tone={t} style={{ width: '100%', height: '100%' }} />
+          {([
+            { tone: 'terracotta', src: '/ramo-chuches.jpg' },
+            { tone: 'rose', src: '/rosa-eterna.jpg' },
+            { tone: 'mustard', src: '/regalos.jpg' },
+            { tone: 'sage', src: '/ramo-chuches.jpg' },
+            { tone: 'blush', src: '/rosa-eterna.jpg' },
+            { tone: 'paper', src: '/regalos.jpg' },
+          ] as const).map((cell, i) => (
+            <div key={i} className={styles.igCell}>
+              <ProductImage tone={cell.tone} src={cell.src} alt={`Mell Craft en Instagram ${i + 1}`} style={{ width: '100%', height: '100%' }} />
             </div>
           ))}
         </div>
