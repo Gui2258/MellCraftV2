@@ -79,7 +79,8 @@
 
 @media (max-width: 768px) {
   .root {
-    padding: 40px 20px 30px;
+    /* Extra bottom padding so the fixed mobile tab bar never covers the footer */
+    padding: 40px 20px calc(30px + 72px + env(safe-area-inset-bottom, 0px));
   }
 
   .grid {
