@@ -9,7 +9,12 @@ const connectionString = rawUrl.replace(/[?&]schema=[^&]*/g, '').replace(/[?&]$/
 // Prevent multiple connections in development (hot reload)
 const globalForDb = globalThis as unknown as { _pgClient: postgres.Sql }
 
-const client = globalForDb._pgClient ?? postgres(connectionString, { max: 10 })
+// `prepare: false` is required when connecting through Supabase's transaction
+// pooler (Supavisor); harmless on a direct/session connection. `max: 1` keeps
+// each serverless instance from opening a fistful of pooled connections.
+const client =
+  globalForDb._pgClient ??
+  postgres(connectionString, { max: process.env.NODE_ENV === 'production' ? 1 : 10, prepare: false })
 if (process.env.NODE_ENV !== 'production') globalForDb._pgClient = client
 
 export const db = drizzle(client, { schema })

@@ -7,6 +7,10 @@ import { products, productTypes, productImages } from '@/lib/db/schema'
 import { eq, desc, asc, inArray } from 'drizzle-orm'
 import styles from './page.module.css'
 
+// Featured products come from the DB — render on request so they stay fresh
+// and the build never depends on DB connectivity.
+export const dynamic = 'force-dynamic'
+
 interface ProductRow {
   id: string
   title: string
